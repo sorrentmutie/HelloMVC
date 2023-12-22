@@ -1,0 +1,29 @@
+﻿@model List<Evento>?
+
+@if(Model is null || (Model is not null && Model.Count == 0))
+{
+    <h3>Non ci sono eventi</h3>
+} else
+{
+    <h3>Lista eventi</h3>
+    <p>Numero totale di eventi: @Model?.Count</p>
+
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Titolo</th>
+            <th>Data</th>
+            <th>Luogo</th>
+        </tr>
+        @foreach (var evento in Model!)
+        {
+            <tr>
+                <td>@evento.Id</td>
+                <td>@evento.Titolo</td>
+                <td>@evento.Data.ToShortDateString()</td>
+                <td>@evento.Località.Count</td>
+            </tr>
+        }
+    </table>
+}
+
