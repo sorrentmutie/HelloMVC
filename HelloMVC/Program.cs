@@ -1,7 +1,10 @@
+using DemoCorso.Core.Eventi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IEventi, GestoreStaticoEventi>();
 
 var app = builder.Build();
 
