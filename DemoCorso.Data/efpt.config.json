@@ -66,6 +66,34 @@
       {
          "Name": "[dbo].[Territories]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CustOrderHist]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[CustOrdersDetail]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[CustOrdersOrders]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[Employee Sales by Country]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[Sales by Year]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SalesByCategory]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[Ten Most Expensive Products]",
+         "ObjectType": 1
       }
    ],
    "UiHint": "(localdb)\\mssqllocaldb.Northwind",

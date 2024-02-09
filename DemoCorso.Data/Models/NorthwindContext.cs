@@ -41,7 +41,7 @@ public partial class NorthwindContext : DbContext
         {
             entity.HasIndex(e => e.CategoryName, "CategoryName");
 
-            entity.Property(e => e.Id).HasColumnName("CategoryID");
+            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.CategoryName)
                 .IsRequired()
                 .HasMaxLength(15);
@@ -347,6 +347,7 @@ public partial class NorthwindContext : DbContext
                 .HasConstraintName("FK_Territories_Region");
         });
 
+        OnModelCreatingGeneratedProcedures(modelBuilder);
         OnModelCreatingPartial(modelBuilder);
     }
 
