@@ -39,7 +39,7 @@ namespace HelloMVC.Services
 
             context.Entry(categoryDb).State = EntityState.Detached;
 
-            var category = new Category { CategoryId = id }; 
+            var category = new Category { Id = id }; 
             context.Entry(category).State = EntityState.Deleted;
             await context.SaveChangesAsync();
         }
@@ -59,7 +59,7 @@ namespace HelloMVC.Services
                .Include(c => c.Products)
                .Select( c => new CategoryIndexViewModel
                {
-                    Id = c.CategoryId, Name = c.CategoryName, 
+                    Id = c.Id, Name = c.CategoryName, 
                     ProductsCount = c.Products.Count
                } )
                .ToListAsync();
@@ -74,7 +74,7 @@ namespace HelloMVC.Services
 
             return new CategoryEditViewModels
             {
-                Id = category.CategoryId,
+                Id = category.Id,
                 Name = category.CategoryName,
                 Description = category.Description
             };
@@ -92,7 +92,7 @@ namespace HelloMVC.Services
             context.Entry(categoryDb).State = EntityState.Detached;
             var category = new Category
             {
-                CategoryId = categoryEditViewModel.Id,
+                Id = categoryEditViewModel.Id,
                 CategoryName = categoryEditViewModel.Name,
                 Description = categoryEditViewModel.Description
             };

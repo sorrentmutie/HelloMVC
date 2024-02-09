@@ -1,8 +1,13 @@
 using DemoCorso.Core.Eventi;
+using DemoCorso.Core.Interfaces;
 using DemoCorso.Data.Models;
+using DemoCorso.Data.Services;
 using DemoCorso.Infrastructure.Northwind.Categorie;
+using HelloMVC.Data;
 using HelloMVC.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +21,16 @@ builder.Services.AddDbContext<NorthwindContext>(opzioni =>
 {
     opzioni.UseSqlServer(connectionString);
 });
+builder.Services.AddDbContext<SchoolDbContext>(opzioni =>
+{
+    opzioni.UseSqlServer(builder.Configuration.GetConnectionString("SchoolConnection"));
+});
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.TryAddScoped<DbContext, NorthwindContext>();
 builder.Services.AddScoped<ICategorie, ServizioCategorie>();
+builder.Services.AddScoped<IRepository<Category, int>, 
+    NorthwindRepository<Category, int>>();
 
 var app = builder.Build();
 
