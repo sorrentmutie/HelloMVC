@@ -1,10 +1,22 @@
 using DemoCorso.Core.Eventi;
+using DemoCorso.Data.Models;
+using DemoCorso.Infrastructure.Northwind.Categorie;
+using HelloMVC.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IEventi, GestoreStaticoEventi>();
+builder.Services.AddDbContext<NorthwindContext>(opzioni =>
+{
+    opzioni.UseSqlServer(connectionString);
+});
+builder.Services.AddScoped<ICategorie, ServizioCategorie>();
 
 var app = builder.Build();
 

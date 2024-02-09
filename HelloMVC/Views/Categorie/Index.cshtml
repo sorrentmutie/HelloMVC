@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CategoryIndexViewModel>
+
+<a class="btn btn-info" href="/Categorie/Create">Crea categoria</a>
+<h3>Categorie prodotti</h3>
+
+@foreach(var category in Model)
+{
+    <div>
+      <p>@category.Name   @category.ProductsCount</p>
+      <a class="btn btn-danger" href="/categorie/edit/@category.Id">Modifica</a>
+    </div>
+}

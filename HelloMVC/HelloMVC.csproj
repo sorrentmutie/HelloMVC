@@ -8,11 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DemoCorso.Core\DemoCorso.Core.csproj" />
+    <ProjectReference Include="..\DemoCorso.Data\DemoCorso.Data.csproj" />
+    <ProjectReference Include="..\DemoCorso.Infrastructure\DemoCorso.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
