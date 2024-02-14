@@ -4,6 +4,7 @@ using HelloMVC.Configurations;
 using HelloMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
 
@@ -15,16 +16,19 @@ namespace HelloMVC.Controllers
         private readonly IRepository<Category, int> repository;
         private readonly IOptions<MyKeyOptions> options;
         private readonly IOptions<TopItemOptions> topItemOptions;
+        private readonly IMemoryCache cache;
 
         public HomeController(ILogger<HomeController> logger,
             IRepository<Category, int> repository,
             IOptions<MyKeyOptions> options,
-            IOptionsSnapshot<TopItemOptions> topItemOptions)
+            IOptionsSnapshot<TopItemOptions> topItemOptions,
+            IMemoryCache cache)
         {
             _logger = logger;
             this.repository = repository;
             this.options = options;
             this.topItemOptions = topItemOptions;
+            this.cache = cache;
             var x = topItemOptions.Get(TopItemOptions.Month);
             var y = x.Model;
             try
@@ -44,6 +48,13 @@ namespace HelloMVC.Controllers
 
         public async Task<IActionResult?> Index()
         {
+            //string value;
+            if (cache.TryGetValue("MyHomeKey", out var value)) {
+                var x = value as string;
+            };
+
+
+
             if (repository is null) return null;
             var categories =  repository.Get();
             if (categories is null) return null;
@@ -61,6 +72,8 @@ namespace HelloMVC.Controllers
 
         public IActionResult Privacy()
         {
+            cache.Set("MyHomeKey", DateTime.Now.ToString());
+
             return View();
         }
 

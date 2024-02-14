@@ -46,6 +46,8 @@ builder.Services.Configure<TopItemOptions>(TopItemOptions.Month,
 builder.Services.Configure<TopItemOptions>(TopItemOptions.Year,
      builder.Configuration.GetSection("TopItem:Year"));
 
+builder.Services.AddMemoryCache();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

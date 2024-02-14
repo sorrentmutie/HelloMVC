@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMVC", "HelloMVC\HelloM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCorso.Core", "DemoCorso.Core\DemoCorso.Core.csproj", "{3319433A-D165-4C45-B92C-DE0B5F81DABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCorso.Data", "DemoCorso.Data\DemoCorso.Data.csproj", "{6E85B935-B3A6-40B0-B01D-0E9B96E5D864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCorso.Data", "DemoCorso.Data\DemoCorso.Data.csproj", "{6E85B935-B3A6-40B0-B01D-0E9B96E5D864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCorso.Infrastructure", "DemoCorso.Infrastructure\DemoCorso.Infrastructure.csproj", "{16046A5D-6600-4ECA-B192-2F4CBB082595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCorso.Infrastructure", "DemoCorso.Infrastructure\DemoCorso.Infrastructure.csproj", "{16046A5D-6600-4ECA-B192-2F4CBB082595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCorso.API", "DemoCorso.API\DemoCorso.API.csproj", "{95501624-A794-42F3-B43F-172897F0B99C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{16046A5D-6600-4ECA-B192-2F4CBB082595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16046A5D-6600-4ECA-B192-2F4CBB082595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16046A5D-6600-4ECA-B192-2F4CBB082595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95501624-A794-42F3-B43F-172897F0B99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95501624-A794-42F3-B43F-172897F0B99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95501624-A794-42F3-B43F-172897F0B99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95501624-A794-42F3-B43F-172897F0B99C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
