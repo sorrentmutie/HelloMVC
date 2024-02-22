@@ -20,6 +20,12 @@ namespace DemoCorso.API.Controllers
         {
             this.northwindContext = northwindContext;
             this.mapper = mapper;
+           
+            // I want to use automapper to map List<Category> to List<CategoryDTO>
+            // I want to use automapper to map List<CategoryAttribute> to List<CategoryAttributeDTO>
+
+
+
         }
 
 
@@ -28,6 +34,7 @@ namespace DemoCorso.API.Controllers
         {
             var categories = (await northwindContext.Categories
                 .Include(c => c.Products)
+                .ThenInclude(p => p.Supplier)
                 .ToListAsync());
             //.ToDTO();
             var categoriesDTO = mapper.Map<List<CategoryDTO>>(categories);

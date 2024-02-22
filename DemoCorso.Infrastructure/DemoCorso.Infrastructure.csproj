@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DemoCorso.Core\DemoCorso.Core.csproj" />
     <ProjectReference Include="..\DemoCorso.Data\DemoCorso.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AutoMapper\" />
   </ItemGroup>
 
 </Project>

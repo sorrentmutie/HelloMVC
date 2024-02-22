@@ -7,6 +7,7 @@ public  class ProductDTO
     public string ProductName { get; set; } = default!;
 
     public int? SupplierId { get; set; }
+    public string SupplierName { get; set; } = default!;
 
     public int? CategoryId { get; set; }
 
