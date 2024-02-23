@@ -35,6 +35,18 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Territory> Territories { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    if (!optionsBuilder.IsConfigured)
+    //    {
+    //        //optionsBuilder.UseSqlServer
+    //        //("Name=ConnectionStrings:[AppSettingsConnectionName]");
+    //        // Use this OB to scaffold
+    //        optionsBuilder.UseSqlServer
+    //        (@"Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Northwind;Integrated Security=True;");
+    //    }
+    //}
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>

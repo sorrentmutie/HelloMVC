@@ -7,6 +7,7 @@ public  class ProductDTO
     public string ProductName { get; set; } = default!;
 
     public int? SupplierId { get; set; }
+    public string? Suppliername { get; set; }
 
     public int? CategoryId { get; set; }
 
@@ -23,3 +24,18 @@ public  class ProductDTO
     public bool Discontinued { get; set; }
 
 }
+
+public class ProductCreateDTO
+{
+    public string ProductName { get; set; } = default!;
+    public int? CategoryId { get; set; }
+    public decimal? UnitPrice { get; set; }
+}
+
+public class ProductUpdateDTO
+{
+    public int ProductId { get; set; }
+    public string ProductName { get; set; } = default!;
+    public decimal? UnitPrice { get; set; }
+}
+
