@@ -1,5 +1,6 @@
+using DemoCorso.API.Services;
+using DemoCorso.Core.Northwind;
 using DemoCorso.Data.Models;
-using DemoCorso.Infrastructure.Northwind.Categorie;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<INorthWindCategoryData, CategoryDataService>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
